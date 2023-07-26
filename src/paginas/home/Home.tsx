@@ -1,33 +1,29 @@
+import homeLogo from '../../assets/home.png'
 import './Home.css';
-// import homeLogo from '../../assets/home.png' //importando imagem
-import {useState } from 'react';
 
-
-const Home = () => {
-    const [loggedIn, setLoggedIn] = useState(false);
-
+function Home() {
     return (
         <>
-            <div>
-                {loggedIn ? ( 
-                    <h1>Bem vindo de volta!</h1>
-                ) : ( 
-                    <button onClick={() => setLoggedIn(true)}>Entrar</button>
-                )}
+            <div className="bg-gradient-to-r from-blue-900 via-indigo-700 to-purple-600 flex justify-center">
+                <div className='container grid grid-cols-2 text-white'>
+                    <div className="flex flex-col gap-4 items-center justify-center py-4">
+                        <h2 className='text-5xl font-bold'>Seja bem vinde!</h2>
+                        <p className='text-xl'>Expresse aqui seus pensamentos e opniões</p>
+
+                        <div className="flex justify-around gap-4">
+
+                            <button className='rounded py-2 px-4 text-white bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300'>Ver postagens</button>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center ">
+                        <img src={homeLogo} alt="" className='w-2/3' />
+                    </div>
+                </div>
             </div>
+
         </>
     );
 }
 
-export default Home;//Expoprtando para que outro componente possa importar essa função
-
-/*
-    Por boas práticas, um componente.tsx (arquivo) só pode armazenar UMA função, caso o projeto exija a criação de x componentes/funções, será necessário criar x arquivos.tsx
-    Os componentes (funções) React retornam elementos HTML para que possam ser exibidos em tela
-
-    OBS: 
-    De inicio, uma função só pode retornar um elemento HTML, para resolver esse problema você pode utilizar uma TAG container (como uma div) para armazenar mais de um elemento HTML
-    Outra opção é utilizar uma pseudotag <> e </> (Fragment) para armazenar mais de um elementos HTML dentro do seu escopos. Dessa forma, podemos utilizar o Fragment ao invés de utilizar inúmeras divs
-
-    PSEUDOTAG = Simula o comportamento de uma tag para o React, porém não é exibida na renderização/exibição do elemento (incluindo DevTools)
-*/
+export default Home;
