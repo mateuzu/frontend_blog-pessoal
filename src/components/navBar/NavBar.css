@@ -1,0 +1,9 @@
+.ancoras:hover{
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.ancoras{
+    transition: transform .2s ease-in-out;
+}
