@@ -7,3 +7,13 @@
 .ancoras{
     transition: transform .2s ease-in-out;
 }
+
+.custom-link{
+    transition: transform .2s ease-in-out;
+}
+
+.custom-link:hover{
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.1);
+}
