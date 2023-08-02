@@ -23,7 +23,7 @@ function Navbar() {
                     <Link to='/home' className='custom-link'><div className='text-2xl font-bold uppercase mx-4'>Blog Pessoal</div></Link>
 
                     <div className='flex gap-4'>
-                        <div className='ancoras'>Postagens</div>
+                        <Link to='/postagens' className='custom-link'><div>Postagens</div></Link>
                         <Link to='/temas' className='custom-link'><div>Temas</div></Link>
                         <Link to='cadastroTema' className='custom-link'><div className='whitespace-nowrap'>Cadastrar tema</div></Link>
                         <div className='ancoras'>Perfil</div>

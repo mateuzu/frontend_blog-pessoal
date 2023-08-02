@@ -1,4 +1,6 @@
 import homeLogo from '../../assets/universe.svg'
+import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import './Home.css';
 
 function Home() {
@@ -11,8 +13,8 @@ function Home() {
                         <p className='text-xl'>Expresse aqui seus pensamentos e opniões</p>
 
                         <div className="flex justify-around gap-4">
-
-                            <button className='rounded py-2 px-4 text-white bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300'>Ver postagens</button>
+                            <ModalPostagem />
+                            <button className='border rounded py-2 px-4 text-white bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300'>Ver postagens</button>
                         </div>
                     </div>
 
@@ -21,7 +23,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-
+            <ListaPostagens />
         </>
     );
 }
