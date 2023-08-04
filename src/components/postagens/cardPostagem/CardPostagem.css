@@ -8,6 +8,7 @@
 
 .icons {
     display: flex;
+    margin-left: 50px;
 }
 
 .icons img{

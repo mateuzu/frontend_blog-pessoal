@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
 import Postagem from '../../../models/Postagem'
 import { buscar, deletar } from '../../../services/Service'
+import { toastAlerta } from '../../../util/toastAlerta'
 
 function DeletarPostagem() {
     const [postagem, setPostagem] = useState<Postagem>({} as Postagem)
@@ -23,7 +24,7 @@ function DeletarPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
+                toastAlerta('O token expirou, favor logar novamente', 'erro')
                 handleLogout()
             }
         }
@@ -31,7 +32,7 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            toastAlerta('O token expirou, favor logar novamente', 'info')
             navigate('/login')
         }
     }, [token])
@@ -47,6 +48,9 @@ function DeletarPostagem() {
     }
 
     async function deletarPostagem() {
+        let btn = document.querySelector('.btn');
+        btn?.classList.toggle('active');
+        
         try {
             await deletar(`/postagens/${id}`, {
                 headers: {
@@ -54,10 +58,10 @@ function DeletarPostagem() {
                 }
             })
 
-            alert('Postagem apagada com sucesso')
+            toastAlerta('Postagem apagada com sucesso', 'sucesso');
 
         } catch (error) {
-            alert('Erro ao apagar a Postagem')
+            toastAlerta('Erro ao apagar a Postagem', 'erro')
         }
 
         retornar()
@@ -74,11 +78,9 @@ function DeletarPostagem() {
                     <p className='text-xl h-full'>{postagem.titulo}</p>
                     <p>{postagem.texto}</p>
                 </div>
-                <div className="flex">
-                    <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
-                    <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={deletarPostagem}>
-                        Sim
-                    </button>
+                <div className="btns bg-white">
+                    <button className='back bg-gradient-to-r from-blue-900 to-blue-700 text-white' onClick={retornar}>Voltar</button>
+                    <a href="#" className="btn delete" onClick={deletarPostagem}><span></span><text>Deletar</text></a>
                 </div>
             </div>
         </div>
