@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 import Tema from '../../../models/Tema'
-// import editarLogo from '../../../assets/editar-icon.png'
-// import excluirLogo from '../../../assets/deletar-icon.png'
 import './CardTemas.css'
 
 interface CardTemaProps {

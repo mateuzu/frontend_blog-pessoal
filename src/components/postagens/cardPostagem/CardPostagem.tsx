@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem'
-import editarLogo from '../../../assets/editar-icon.png'
-import excluirLogo from '../../../assets/deletar-icon.png'
 import './CardPostagem.css'
 
 interface CardPostagemProps {
