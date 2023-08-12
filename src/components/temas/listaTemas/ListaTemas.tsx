@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
+import { Comment } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
@@ -42,13 +42,15 @@ function ListaTemas() {
     return (
         <>
             {temas.length === 0 && (
-                <Dna
+                <Comment
                     visible={true}
                     height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
+                    width="1550"
+                    ariaLabel="comment-loading"
                     wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
+                    wrapperClass="comment-wrapper"
+                    color="#fff"
+                    backgroundColor="#1c4f9a"
                 />
             )}
             <div className="flex justify-center w-full my-4">

@@ -14,7 +14,7 @@ function Footer() {
     if(usuario.token !== '') {
         footerComponent = (
             <>
-                <div className="flex justify-center bg-gradient-to-r from-blue-900 via-indigo-700 to-purple-600 text-white">
+                <div className="flex justify-center bg-gradient-to-r from-blue-900 via-indigo-700 to-purple-600 text-white opacity-90">
                     <div className="container flex flex-col items-center py-4">
                         <p className='text-xl font-bold'>Blog pessoal Mateus Ferreira | Copyright: {data}</p>
                         <p className='text-lg'>Acesse nossas redes sociais</p>

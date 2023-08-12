@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
+import { Comment} from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagem';
@@ -44,13 +44,15 @@ function ListaPostagens() {
     return (
         <>
             {postagens.length === 0 && (
-                <Dna
+                <Comment
                     visible={true}
                     height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
+                    width="1550"
+                    ariaLabel="comment-loading"
                     wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
+                    wrapperClass="comment-wrapper"
+                    color="#fff"
+                    backgroundColor="#1c4f9a"
                 />
             )}
             <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

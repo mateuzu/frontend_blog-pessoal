@@ -12,38 +12,39 @@ interface CardPostagemProps {
 
 function CardPostagem({ post }: CardPostagemProps) {
     return (
-        <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
-            <div>
-                <div className="flex w-full py-2 px-4 items-center gap-4 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white">
-                    <img src={post.usuario?.foto} className='h-12 rounded-full' alt="" />
-                        <div className='header'>
-                            <h3 className='text-lg font-bold text-center uppercase'>{post.usuario?.nome}</h3>
-                            <div className='icons'>
-                                <Link to={`/editarPostagem/${post.id}`} className='w-full text-white'>
-                                    <img src={editarLogo}  className='ml-3' alt="Editar" />
-                                </Link>
-                                <Link to={`/deletarPostagem/${post.id}`} className='text-white'>
-                                    <img src={excluirLogo}  className='ml-3' alt="Deletar" />
-                                </Link>
-                            </div>
-                        </div>
-                </div>
-                <div className='p-4 '>
-                    <h4 className='text-lg font-semibold uppercase'>{post.titulo}</h4>
-                    <p>{post.texto}</p>
-                    <p>Tema: {post.tema?.descricao}</p>
-                    <p>Data: {new Intl.DateTimeFormat('pt-BR', {
+        <>
+            <div className="max-w-sm bg-indigo-900 border border-gray-200 rounded-lg shadow p-5">
+            
+                    <img className="rounded-t-lg" src={post.usuario?.foto} alt={`Foto de perfil de ${post.usuario?.nome}`} />
+
+                <div className="p-5">
+                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.titulo}</h5>
+                    <p className="mb-3 font-normal text-white ">{post.tema?.descricao}</p>
+                    <p className="mb-3 font-normal text-white ">{post.texto}</p>
+                    <p className="mb-3 font-normal text-white ">Data: {new Intl.DateTimeFormat('pt-BR', {
                         timeZone: 'America/Sao_Paulo',
                         dateStyle: 'full',
                         timeStyle: 'long',
                     }).format(new Date(post.data))}</p>
+                    <div className='btn-post'>
+                        <Link to={`/editarPostagem/${post.id}`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
+                            Editar
+                        </Link>
+                        <Link to={`/deletarPostagem/${post.id}`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800">
+                            Deletar
+                        </Link>
+                    </div>
                 </div>
             </div>
-            <div className="flex">
-                
-            </div>
-        </div>
+
+        </>
     )
 }
 
 export default CardPostagem
+
+{/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Data: {new Intl.DateTimeFormat('pt-BR', {
+                        timeZone: 'America/Sao_Paulo',
+                        dateStyle: 'full',
+                        timeStyle: 'long',
+                    }).format(new Date(post.data))}</p> */}

@@ -40,7 +40,7 @@
 
 .delete span {
     position: absolute;
-    left: 50px;
+    left: 20px;
     width: 18px;
     height: 20px;
     display: inline-block;
@@ -91,11 +91,23 @@
 .delete text{
     position: absolute;
     color: #fff;
-    left: 80px;
+    left: 50px;
     transition: 0.5s;
 }
 
 .delete:hover text, 
 .delete.active text{
     transform: translateX(-50px) translateY(-5px) scale(0);
+}
+
+.delete-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-delete{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

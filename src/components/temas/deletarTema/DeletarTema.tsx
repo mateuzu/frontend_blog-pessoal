@@ -68,15 +68,16 @@ function DeletarTema() {
         retornar()
     }
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar tema</h1>
-            <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar o tema a seguir?</p>
-            <div className='border-slate-900 border flex flex-col overflow-hidden'>
-                <header className='py-2 px-6 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white font-bold text-2xl'>Tema</header>
-                <p className='p-8 text-3xl h-full'>{tema.descricao}</p>
-                <div className="btns">
-                    <button className='back bg-gradient-to-r from-blue-900 to-blue-700 text-white' onClick={retornar}>Voltar</button>
-                    <a href="#" className="btn delete" onClick={deletarTema}><span></span><text>Deletar</text></a>
+        <div className='flex justify-center mt-5'>
+            <div className="ml-3 block max-w-sm p-8 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-indigo-900 dark:border-gray-700 dark:hover:bg-indigo-800">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{tema.descricao}</h5>
+                <div className='flex justify-evenly mt-5'>
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800" onClick={retornar}>
+                    Retornar
+                </button>
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800" onClick={deletarTema}>
+                    Deletar
+                </button>
                 </div>
             </div>
         </div>

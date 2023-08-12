@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Tema from '../../../models/Tema'
-import editarLogo from '../../../assets/editar-icon.png'
-import excluirLogo from '../../../assets/deletar-icon.png'
+// import editarLogo from '../../../assets/editar-icon.png'
+// import excluirLogo from '../../../assets/deletar-icon.png'
 import './CardTemas.css'
 
 interface CardTemaProps {
@@ -10,24 +10,15 @@ interface CardTemaProps {
 
 function CardTemas({ tema }: CardTemaProps) {
     return (
-        <div className='border-slate-900 border flex flex-col  overflow-hidden justify-between'>
-            <header className='py-2 px-6 text-white font-bold text-2xl bg-gradient-to-r from-indigo-900 to-indigo-700'>
-                <div className='header'>
-                    Tema
-                    <div className='icons'>
-                        <Link to={`/editarTema/${tema.id}`} className='w-full text-slate-100 py-2 flex items-center justify-center'>
-                            <img src={editarLogo}  className='' alt="Editar" />
-                        </Link>
-                        
-                        <Link to={`/deletarTema/${tema.id}`} className='text-slate-100 w-full flex items-center justify-center'>
-                            <img src={excluirLogo}  className='ml-6 mr-3' alt="Deletar" />
-                        </Link>
-                    </div>
-                </div>
-            </header>
-            <p className='p-8 text-3xl bg-white h-full'>{tema.descricao}</p>
-            <div className="flex">
-                
+        <div className="ml-3 block max-w-sm p-8 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-indigo-900 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{tema.descricao}</h5>
+            <div className='flex justify-evenly mt-5'>
+            <Link to={`/editarTema/${tema.id}`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
+                Editar
+            </Link>
+            <Link to={`/deletarTema/${tema.id}`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800">
+                Deletar
+            </Link>
             </div>
         </div>
     )

@@ -1,0 +1,37 @@
+.perfil-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom right, #1c4f9a, #4a4e7c, #6f2c63);
+    height: 100vh;   
+}
+
+.perfil-card-background{
+    background: #fff;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.perfil-card{
+    width: 50vw;
+    height: 50vh;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #444;
+    z-index: 1;
+}
+
+.testebtn{
+    height: 10%;
+    border: 2px solid red;
+}
+
+.dados{
+    background: #fff1;
+    padding: 5%;
+    border-radius: 50px;
+    box-shadow: 2px 5px 6px #fff;
+}

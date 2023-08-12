@@ -50,7 +50,7 @@ function DeletarPostagem() {
     async function deletarPostagem() {
         let btn = document.querySelector('.btn');
         btn?.classList.toggle('active');
-        
+
         try {
             await deletar(`/postagens/${id}`, {
                 headers: {
@@ -70,21 +70,30 @@ function DeletarPostagem() {
         <div className='container w-1/3 mx-auto'>
             <h1 className='text-4xl text-center my-4'>Deletar postagem</h1>
 
-            <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar a postagem a seguir?</p>
+            <div className=''>
+                <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar a postagem a seguir?</p>
 
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Postagem</header>
-                <div className="p-4">
-                    <p className='text-xl h-full'>{postagem.titulo}</p>
-                    <p>{postagem.texto}</p>
-                </div>
-                <div className="btns bg-white">
-                    <button className='back bg-gradient-to-r from-blue-900 to-blue-700 text-white' onClick={retornar}>Voltar</button>
-                    <a href="#" className="btn delete" onClick={deletarPostagem}><span></span><text>Deletar</text></a>
+                <div className="max-w-sm p-6 bg-indigo-900 border border-gray-200 rounded-lg shadow">
+                    <a href="#">
+                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{postagem.titulo}</h5>
+                    </a>
+                    <p className="mb-1 font-normal text-white">{postagem.texto}</p>
+                    <p className="mb-1 font-normal text-white">Tema: {postagem.tema?.descricao}</p>
+                    <p className="mb-1 font-normal text-white"> Usuario: {postagem.usuario?.nome}</p>
+                    <div className='btn-post mt-5'>
+                        <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800" onClick={retornar}>
+                            Retornar
+                        </button>
+                        <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800" onClick={deletarPostagem}>
+                            Deletar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
+
+{/* <a href="#" className="btn delete" onClick={deletarPostagem}><span></span><text>Deletar</text></a> */ }
 
 export default DeletarPostagem

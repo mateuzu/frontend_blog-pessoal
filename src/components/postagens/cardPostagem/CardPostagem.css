@@ -1,16 +1,4 @@
-.header {
+.btn-post{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.icons {
-    display: flex;
-    margin-left: 50px;
-}
-
-.icons img{
-    width:20px;
+    justify-content: space-around;
 }
